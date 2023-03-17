@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hostal" nsURI="http:///hostal.ecore" nsPrefix="hostal">
+  <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EBooleanObject" instanceClassName="java.lang.Boolean"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EDoubleObject" instanceClassName="java.lang.Double"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EIntegerObject" instanceClassName="java.lang.Integer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EList" instanceClassName="org.eclipse.emf.common.util.EList"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EChar" instanceClassName="char"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ArrayList" instanceClassName="java.util.ArrayList"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelFactory">
+    <eOperations name="cargar" eType="#//ModelFactory">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="ModelFactory modelFactory = null;&#xA;org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI(&quot;platform:/resource/&quot;+ruta);&#xA;org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();&#xA;org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);&#xA;try {&#xA;resource.load(java.util.Collections.EMPTY_MAP);&#xA;modelFactory = (ModelFactory) resource.getContents().get(0);&#xA;} catch (java.io.IOException e) {&#xA;// TO-DO Auto-generated catch block&#xA;e.printStackTrace();&#xA;}&#xA;&#xA;return modelFactory;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="ruta" eType="#//String"/>
+    </eOperations>
+    <eOperations name="salvar">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="ModelFactory modelFactory = this;&#xA;org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI(&quot;platform:/resource/&quot;+ruta);&#xA;org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();&#xA;org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);&#xA;resource.getContents().add(modelFactory);&#xA;try {&#xA;resource.save(java.util.Collections.EMPTY_MAP);&#xA;} catch (java.io.IOException e) {&#xA;// TO-DO Auto-generated catch block&#xA;e.printStackTrace();&#xA;}&#xA;&#xA;return;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="ruta" eType="#//String"/>
+    </eOperations>
+    <eOperations name="implementarModelo">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="//TODO implementarModelo&#xA;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theDomain" eType="#//domain/Domain"
+        containment="true" eOpposite="#//domain/Domain/theModelFactory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theUI" eType="#//ui/UI"
+        containment="true" eOpposite="#//ui/UI/theModelFactory"/>
+  </eClassifiers>
+  <eSubpackages name="domain" nsURI="http:///hostal/domain.ecore" nsPrefix="hostal.domain">
+    <eClassifiers xsi:type="ecore:EClass" name="Cama" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="largo" eType="#//EDoubleObject"
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ancho" eType="#//EDoubleObject"
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="almohada" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hostel" eType="#//domain/Hostel"
+          eOpposite="#//domain/Hostel/listaCama"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tipoCobija" eType="#//domain/TipoCobija"
+          eOpposite="#//domain/TipoCobija/cama"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="habitacion" eType="#//domain/Habitacion"
+          eOpposite="#//domain/Habitacion/cama"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CamaDoble" eSuperTypes="#//domain/Cama">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mesaNoche" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CamaSencilla" eSuperTypes="#//domain/Cama">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mesita" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Cliente" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cedula" eType="#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="telefono" eType="#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="movil" eType="#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" eType="#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hostel" eType="#//domain/Hostel"
+          eOpposite="#//domain/Hostel/listaClientes"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listaHabitaciones" upperBound="-1"
+          eType="#//domain/Habitacion" eOpposite="#//domain/Habitacion/cliente"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Domain">
+      <eOperations name="implementarModelo">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="//TODO implementarModelo&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theModelFactory" eType="#//ModelFactory"
+          eOpposite="#//ModelFactory/theDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstHostel" upperBound="-1"
+          eType="#//domain/Hostel" eOpposite="#//domain/Hostel/lstDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theUI" eType="#//ui/UI"
+          eOpposite="#//ui/UI/theDomain"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Estado">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="inicio" eType="#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="fin" eType="#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="motivo" eType="#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="habitacion" eType="#//domain/Habitacion"
+          eOpposite="#//domain/Habitacion/estado"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tipoEstado" eType="#//domain/TipoEstado"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstTipoEstado" upperBound="-1"
+          eType="#//domain/TipoEstado" eOpposite="#//domain/TipoEstado/lstEstado"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Habitacion" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cliente" eType="#//domain/Cliente"
+          eOpposite="#//domain/Cliente/listaHabitaciones"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="estado" eType="#//domain/Estado"
+          containment="true" eOpposite="#//domain/Estado/habitacion"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="banio" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internet" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="numHabitacion" eType="#//EIntegerObject"
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="parking" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="telefono" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cama" eType="#//domain/Cama"
+          eOpposite="#//domain/Cama/habitacion"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstCamaSencilla" upperBound="-1"
+          eType="#//domain/HabitacionSencilla" eOpposite="#//domain/HabitacionSencilla/lstHabitacion"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hostel" eType="#//domain/Hostel"
+          eOpposite="#//domain/Hostel/listaHabitaciones"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HabitacionDoble" eSuperTypes="#//domain/Habitacion">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="jacuzzi" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tvHD" eType="#//String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HabitacionSencilla" eSuperTypes="#//domain/Habitacion">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aguaCaliente" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tvLCD" eType="#//EBooleanObject"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstHabitacion" upperBound="-1"
+          eType="#//domain/Habitacion" eOpposite="#//domain/Habitacion/lstCamaSencilla"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Hostel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listaCama" upperBound="-1"
+          eType="#//domain/Cama" containment="true" eOpposite="#//domain/Cama/hostel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listaClientes" upperBound="-1"
+          eType="#//domain/Cliente" containment="true" eOpposite="#//domain/Cliente/hostel"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstDomain" upperBound="-1"
+          eType="#//domain/Domain" eOpposite="#//domain/Domain/lstHostel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listaHabitaciones" upperBound="-1"
+          eType="#//domain/Habitacion" containment="true" eOpposite="#//domain/Habitacion/hostel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TipoEstado">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstEstado" upperBound="-1"
+          eType="#//domain/Estado" eOpposite="#//domain/Estado/lstTipoEstado"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TipoCobija">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cama" eType="#//domain/Cama"
+          eOpposite="#//domain/Cama/tipoCobija"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//String"/>
+    </eClassifiers>
+    <eSubpackages name="newpackage1" nsURI="http:///hostal/domain/newpackage1.ecore"
+        nsPrefix="hostal.domain.newpackage1"/>
+  </eSubpackages>
+  <eSubpackages name="ui" nsURI="http:///hostal/ui.ecore" nsPrefix="hostal.ui">
+    <eClassifiers xsi:type="ecore:EClass" name="UI">
+      <eOperations name="implementarModelo">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="//TODO implementarModelo&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theModelFactory" eType="#//ModelFactory"
+          eOpposite="#//ModelFactory/theUI"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theDomain" eType="#//domain/Domain"
+          eOpposite="#//domain/Domain/theUI"/>
+    </eClassifiers>
+    <eSubpackages name="viewmodels" nsURI="http:///hostal/ui/viewmodels.ecore" nsPrefix="hostal.ui.viewmodels"/>
+  </eSubpackages>
+</ecore:EPackage>

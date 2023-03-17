@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hostal/src" modelPluginID="hostal" modelName="Model" complianceLevel="6.0" copyrightFields="false" editPluginID="hostal.edit" editorPluginID="hostal.editor">
+  <foreignModel>hostal.ecore</foreignModel>
+  <genPackages prefix="hostal" disposableProviderFactory="true">
+    <ecorePackage href="hostal.ecore#/"/>
+    <genDataTypes>
+      <ecoreDataType href="hostal.ecore#//String"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="hostal.ecore#//EBooleanObject"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="hostal.ecore#//EDoubleObject"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="hostal.ecore#//EIntegerObject"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="hostal.ecore#//EList"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="hostal.ecore#//EChar"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="hostal.ecore#//ArrayList"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="hostal.ecore#//ModelFactory"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//ModelFactory/theDomain"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//ModelFactory/theUI"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="hostal.ecore#//ModelFactory/cargar"/>
+        <genParameters>
+          <ecoreParameter href="hostal.ecore#//ModelFactory/cargar/ruta"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="hostal.ecore#//ModelFactory/salvar"/>
+        <genParameters>
+          <ecoreParameter href="hostal.ecore#//ModelFactory/salvar/ruta"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="hostal.ecore#//ModelFactory/implementarModelo"/>
+      </genOperations>
+    </genClasses>
+    <nestedGenPackages prefix="Domain" disposableProviderFactory="true">
+      <ecorePackage href="hostal.ecore#//domain"/>
+      <genClasses image="false">
+        <ecoreClass href="hostal.ecore#//domain/Cama"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Cama/largo"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Cama/ancho"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Cama/almohada"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Cama/hostel"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Cama/tipoCobija"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Cama/habitacion"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//domain/CamaDoble"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/CamaDoble/mesaNoche"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//domain/CamaSencilla"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/CamaSencilla/mesita"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="hostal.ecore#//domain/Cliente"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Cliente/cedula"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Cliente/telefono"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Cliente/movil"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Cliente/email"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Cliente/hostel"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Cliente/listaHabitaciones"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//domain/Domain"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Domain/theModelFactory"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Domain/lstHostel"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Domain/theUI"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="hostal.ecore#//domain/Domain/implementarModelo"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//domain/Estado"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Estado/inicio"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Estado/fin"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Estado/motivo"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Estado/habitacion"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Estado/tipoEstado"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Estado/lstTipoEstado"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="hostal.ecore#//domain/Habitacion"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Habitacion/cliente"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Habitacion/estado"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Habitacion/banio"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Habitacion/internet"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Habitacion/numHabitacion"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Habitacion/parking"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Habitacion/telefono"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Habitacion/cama"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Habitacion/lstCamaSencilla"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Habitacion/hostel"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//domain/HabitacionDoble"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/HabitacionDoble/jacuzzi"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/HabitacionDoble/tvHD"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//domain/HabitacionSencilla"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/HabitacionSencilla/aguaCaliente"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/HabitacionSencilla/tvLCD"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/HabitacionSencilla/lstHabitacion"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//domain/Hostel"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Hostel/listaCama"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Hostel/listaClientes"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/Hostel/nombre"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Hostel/lstDomain"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/Hostel/listaHabitaciones"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//domain/TipoEstado"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/TipoEstado/tipo"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/TipoEstado/lstEstado"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//domain/TipoCobija"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//domain/TipoCobija/cama"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="hostal.ecore#//domain/TipoCobija/tipo"/>
+        </genFeatures>
+      </genClasses>
+      <nestedGenPackages prefix="Newpackage1" disposableProviderFactory="true">
+        <ecorePackage href="hostal.ecore#//domain/newpackage1"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Ui" disposableProviderFactory="true">
+      <ecorePackage href="hostal.ecore#//ui"/>
+      <genClasses>
+        <ecoreClass href="hostal.ecore#//ui/UI"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//ui/UI/theModelFactory"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="hostal.ecore#//ui/UI/theDomain"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="hostal.ecore#//ui/UI/implementarModelo"/>
+        </genOperations>
+      </genClasses>
+      <nestedGenPackages prefix="Viewmodels" disposableProviderFactory="true">
+        <ecorePackage href="hostal.ecore#//ui/viewmodels"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated hostal -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="hostal.presentation.hostalModelWizardID"
+            name="%_UI_hostalModelWizard_label"
+            class="hostal.presentation.hostalModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/hostalModelFile.gif">
+         <description>%_UI_hostalModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated hostal -->
+      <editor
+            id="hostal.presentation.hostalEditorID"
+            name="%_UI_hostalEditor_label"
+            icon="icons/full/obj16/hostalModelFile.gif"
+            extensions="hostal"
+            class="hostal.presentation.hostalEditor"
+            contributorClass="hostal.presentation.hostalActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated hostal -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="hostal.domain.presentation.DomainModelWizardID"
+            name="%_UI_DomainModelWizard_label"
+            class="hostal.domain.presentation.DomainModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DomainModelFile.gif">
+         <description>%_UI_DomainModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated hostal -->
+      <editor
+            id="hostal.domain.presentation.DomainEditorID"
+            name="%_UI_DomainEditor_label"
+            icon="icons/full/obj16/DomainModelFile.gif"
+            extensions="domain"
+            class="hostal.domain.presentation.DomainEditor"
+            contributorClass="hostal.domain.presentation.DomainActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated hostal -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="hostal.ui.presentation.UiModelWizardID"
+            name="%_UI_UiModelWizard_label"
+            class="hostal.ui.presentation.UiModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UiModelFile.gif">
+         <description>%_UI_UiModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated hostal -->
+      <editor
+            id="hostal.ui.presentation.UiEditorID"
+            name="%_UI_UiEditor_label"
+            icon="icons/full/obj16/UiModelFile.gif"
+            extensions="ui"
+            class="hostal.ui.presentation.UiEditor"
+            contributorClass="hostal.ui.presentation.UiActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

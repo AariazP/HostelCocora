@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hostal -->
+      <package
+            uri="http:///hostal.ecore"
+            class="hostal.hostalPackage"
+            genModel="model/hostal.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hostal -->
+      <package
+            uri="http:///hostal/domain.ecore"
+            class="hostal.domain.DomainPackage"
+            genModel="model/hostal.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hostal -->
+      <package
+            uri="http:///hostal/ui.ecore"
+            class="hostal.ui.UiPackage"
+            genModel="model/hostal.genmodel"/>
+   </extension>
+
+</plugin>
